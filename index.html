@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supera — Treine mais. Evolua mais. Supere seus amigos.</title>
+<meta name="description" content="O único app que une treinos de academia, composição corporal e competições com amigos. Comece grátis.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1D9E75">
+
+<!-- Open Graph (WhatsApp, Instagram, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://superaapp.com.br">
+<meta property="og:title" content="Supera — Treine mais. Evolua mais. Supere seus amigos.">
+<meta property="og:description" content="O único app que une treinos de academia, composição corporal e competições com amigos. Comece grátis.">
+<meta property="og:image" content="https://superaapp.com.br/og-image.png">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Supera — Treine mais. Evolua mais. Supere seus amigos.">
+<meta name="twitter:description" content="O único app que une treinos de academia, composição corporal e competições com amigos. Comece grátis.">
+<meta name="twitter:image" content="https://superaapp.com.br/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --teal-dark: #0F6E56;
+    --teal-mid: #5DCAA5;
+    --ink: #111;
+    --ink2: #444;
+    --ink3: #777;
+    --surface: #f8faf9;
+    --white: #fff;
+    --border: rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5vw;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--teal);
+    letter-spacing: -0.5px;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-login {
+    padding: 8px 18px !important;
+    border: 1.5px solid var(--border) !important;
+    border-radius: 50px !important;
+    color: var(--ink) !important;
+    font-size: 14px !important;
+    transition: all 0.2s !important;
+  }
+  .nav-login:hover { border-color: var(--teal) !important; color: var(--teal) !important; background: var(--teal-light) !important; }
+
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink3);
+    cursor: pointer;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    transition: all 0.2s;
+  }
+  .lang-toggle:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* HERO */
+  .hero {
+    padding: 100px 5vw 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--teal-light);
+    color: var(--teal-dark);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero-tag .dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; flex-shrink: 0; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--teal);
+    position: relative;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--ink2);
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.7;
+    max-width: 480px;
+  }
+
+  .hero-sub strong { font-weight: 500; color: var(--ink); }
+
+  .cta-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(29,158,117,0.3);
+  }
+
+  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(29,158,117,0.4); }
+
+  .btn-secondary {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink2);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--teal); }
+
+  .social-proof {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .avatars {
+    display: flex;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .avatar:first-child { margin-left: 0; }
+  .av1 { background: #1D9E75; }
+  .av2 { background: #378ADD; }
+  .av3 { background: #D85A30; }
+  .av4 { background: #7F77DD; }
+
+  .social-proof-text { font-size: 13px; color: var(--ink3); }
+  .social-proof-text strong { color: var(--ink); font-weight: 500; }
+
+  /* HERO VISUAL */
+  .hero-visual {
+    position: relative;
+    height: 520px;
+  }
+
+  .mock-card {
+    position: absolute;
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .card-main {
+    width: 300px;
+    top: 0;
+    right: 0;
+    padding: 20px;
+  }
+
+  .card-main-header {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .stat-box {
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+  }
+
+  .stat-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--teal);
+  }
+
+  .stat-lbl {
+    font-size: 11px;
+    color: var(--ink3);
+    margin-top: 2px;
+  }
+
+  .progress-item {
+    margin-bottom: 10px;
+  }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--ink2);
+    margin-bottom: 5px;
+  }
+
+  .progress-bar {
+    height: 6px;
+    background: var(--teal-light);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--teal);
+    border-radius: 3px;
+  }
+
+  .card-ranking {
+    width: 240px;
+    bottom: 40px;
+    left: 0;
+    padding: 18px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .ranking-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .rank-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  .rank-row:last-child { border-bottom: none; }
+
+  .rank-medal { font-size: 16px; }
+  .rank-name { flex: 1; font-weight: 500; color: var(--ink); }
+  .rank-name.you { color: var(--teal); font-weight: 700; }
+  .rank-score { font-size: 12px; color: var(--ink3); }
+
+  .card-bio {
+    width: 180px;
+    top: 60px;
+    left: 0;
+    padding: 16px;
+    animation: float2 5s ease-in-out infinite;
+  }
+
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .bio-header { font-size: 11px; font-weight: 700; color: var(--ink3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+
+  .bio-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 4px 0;
+  }
+
+  .bio-label { color: var(--ink3); }
+  .bio-val { font-weight: 700; color: var(--ink); }
+  .bio-delta { font-size: 10px; color: var(--teal); font-weight: 500; }
+
+  /* FEATURES */
+  .section {
+    padding: 100px 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--ink2);
+    font-weight: 300;
+    max-width: 560px;
+    margin-bottom: 60px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .feature-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 28px;
+    border: 1px solid var(--border);
+    transition: all 0.25s;
+    cursor: default;
+  }
+
+  .feature-card:hover {
+    border-color: var(--teal-mid);
+    box-shadow: 0 8px 32px rgba(29,158,117,0.12);
+    transform: translateY(-3px);
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--teal-light);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .feature-icon svg { width: 22px; height: 22px; stroke: var(--teal); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .feature-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .feature-card p {
+    font-size: 14px;
+    color: var(--ink3);
+    line-height: 1.65;
+  }
+
+  /* PRICING */
+  .pricing-section {
+    background: var(--surface);
+    padding: 100px 5vw;
+  }
+
+  .pricing-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 60px;
+    text-align: left;
+  }
+
+  .pricing-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+  }
+
+  .pricing-card.featured {
+    border: 2px solid var(--teal);
+    position: relative;
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--teal);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .plan-name {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--ink3);
+    margin-bottom: 12px;
+  }
+
+  .plan-price {
+    font-family: 'Syne', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .plan-price span {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink3);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .plan-period {
+    font-size: 13px;
+    color: var(--ink3);
+    margin-bottom: 28px;
+  }
+
+  .plan-features {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+
+  .plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--ink2);
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .plan-features li:last-child { border-bottom: none; }
+
+  .check {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--teal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .check svg { width: 10px; height: 10px; stroke: var(--teal); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  .dash {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .dash::after { content: ''; width: 8px; height: 1.5px; background: #bbb; display: block; border-radius: 1px; }
+
+  .plan-cta {
+    width: 100%;
+    padding: 14px;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+
+  .plan-cta.outline {
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--ink);
+  }
+
+  .plan-cta.outline:hover { border-color: var(--teal); color: var(--teal); }
+
+  .plan-cta.solid {
+    background: var(--teal);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 16px rgba(29,158,117,0.3);
+  }
+
+  .plan-cta.solid:hover { background: var(--teal-dark); box-shadow: 0 6px 20px rgba(29,158,117,0.4); }
+
+  /* FOOTER */
+  footer {
+    padding: 48px 5vw;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 13px;
+    color: var(--ink3);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding: 60px 5vw 40px; }
+    .hero-visual { display: none; }
+    .features-grid { grid-template-columns: 1fr; }
+    .pricing-cards { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  /* LANG SWITCH */
+  .lang-en { display: none !important; }
+  body.en .lang-pt { display: none !important; }
+  body.en .lang-en { display: revert !important; }
+  span.lang-en { display: none !important; }
+  span.lang-pt { display: inline !important; }
+  body.en span.lang-pt { display: none !important; }
+  body.en span.lang-en { display: inline !important; }
+
+  /* FAQ */
+  .faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 0; }
+
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--teal); }
+
+  .faq-icon {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--teal);
+    flex-shrink: 0;
+    transition: transform 0.25s;
+    line-height: 1;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-a {
+    font-size: 15px;
+    color: var(--ink3);
+    line-height: 1.7;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding-bottom: 0;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 20px; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+  .hero-visual {
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">Supera</a>
+  <ul class="nav-links">
+    <li><a href="#features"><span class="lang-pt">Funcionalidades</span><span class="lang-en">Features</span></a></li>
+    <li><a href="#pricing"><span class="lang-pt">Planos</span><span class="lang-en">Pricing</span></a></li>
+    <li><a href="https://move-track-inspire.lovable.app" target="_blank" class="nav-login"><span class="lang-pt">Entrar</span><span class="lang-en">Log in</span></a></li>
+  </ul>
+  <button class="lang-toggle" onclick="toggleLang()">
+    <span class="lang-pt">🇺🇸 EN</span>
+    <span class="lang-en">🇧🇷 PT</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section style="background: linear-gradient(160deg, #f8faf9 0%, white 60%);">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        <span class="lang-pt">Fitness tracker completo</span>
+        <span class="lang-en">All-in-one fitness tracker</span>
+      </div>
+
+      <h1 class="lang-pt">Treine mais.<br><em>Evolua mais.</em><br>Supere seus amigos.</h1>
+      <h1 class="lang-en">Train more.<br><em>Evolve more.</em><br>Beat your friends.</h1>
+
+      <p class="hero-sub lang-pt">O único app que une <strong>treinos de academia</strong>, <strong>composição corporal</strong> e <strong>competições com amigos</strong> — tudo em um só lugar.</p>
+      <p class="hero-sub lang-en">The only app that combines <strong>gym workouts</strong>, <strong>body composition</strong>, and <strong>competitions with friends</strong> — all in one place.</p>
+
+      <div class="cta-group">
+        <a href="https://move-track-inspire.lovable.app" class="btn-primary" target="_blank">
+          <span class="lang-pt">Começar grátis</span>
+          <span class="lang-en">Get started free</span>
+          →
+        </a>
+        <a href="#features" class="btn-secondary">
+          <span class="lang-pt">Ver funcionalidades</span>
+          <span class="lang-en">See features</span>
+          ↓
+        </a>
+      </div>
+
+      <div class="social-proof">
+        <div class="avatars">
+          <div class="avatar av1">FC</div>
+          <div class="avatar av2">MR</div>
+          <div class="avatar av3">AT</div>
+          <div class="avatar av4">DK</div>
+        </div>
+        <div class="social-proof-text">
+          <span class="lang-pt"><strong>Atletas ativos</strong> já usam o Supera</span>
+          <span class="lang-en"><strong>Active athletes</strong> already use Supera</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO VISUAL -->
+    <div class="hero-visual">
+      <!-- Main dashboard card -->
+      <div class="mock-card card-main">
+        <div class="card-main-header">Dashboard</div>
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-val">7</div>
+            <div class="stat-lbl lang-pt">Atividades</div>
+            <div class="stat-lbl lang-en">Activities</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val">500</div>
+            <div class="stat-lbl lang-pt">Minutos</div>
+            <div class="stat-lbl lang-en">Minutes</div>
+          </div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">
+            <span class="lang-pt">Projeto Steve Rogers</span>
+            <span class="lang-en">Project Steve Rogers</span>
+            <span>1/4</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">
+            <span class="lang-pt">Projeto Djoko</span>
+            <span class="lang-en">Project Djoko</span>
+            <span>1/3</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 33%"></div></div>
+        </div>
+      </div>
+
+      <!-- Ranking card -->
+      <div class="mock-card card-ranking">
+        <div class="ranking-title">
+          <span class="lang-pt">🏆 Competição</span>
+          <span class="lang-en">🏆 Competition</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-medal">🥇</span>
+          <span class="rank-name">cris_ronaldo</span>
+          <span class="rank-score">7 treinos</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-medal">🥈</span>
+          <span class="rank-name you"><span class="lang-pt">Você</span><span class="lang-en">You</span></span>
+          <span class="rank-score">4 treinos</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-medal">🥉</span>
+          <span class="rank-name">Atleta 73d1</span>
+          <span class="rank-score">2 treinos</span>
+        </div>
+      </div>
+
+      <!-- Bio card -->
+      <div class="mock-card card-bio">
+        <div class="bio-header">
+          <span class="lang-pt">Composição</span>
+          <span class="lang-en">Body Comp</span>
+        </div>
+        <div class="bio-metric">
+          <span class="bio-label lang-pt">Peso</span>
+          <span class="bio-label lang-en">Weight</span>
+          <span><span class="bio-val">70.2kg</span> <span class="bio-delta">↑1.1</span></span>
+        </div>
+        <div class="bio-metric">
+          <span class="bio-label lang-pt">Músculo</span>
+          <span class="bio-label lang-en">Muscle</span>
+          <span><span class="bio-val">35.4kg</span> <span class="bio-delta">↑1.8</span></span>
+        </div>
+        <div class="bio-metric">
+          <span class="bio-label lang-pt">Gordura</span>
+          <span class="bio-label lang-en">Fat</span>
+          <span><span class="bio-val">11.2%</span> <span class="bio-delta" style="color:#D85A30">↓2.2</span></span>
+        </div>
+        <div class="bio-metric">
+          <span class="bio-label">IMC</span>
+          <span><span class="bio-val">21.7</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-tag">
+    <span class="lang-pt">Funcionalidades</span>
+    <span class="lang-en">Features</span>
+  </div>
+  <h2>
+    <span class="lang-pt">Tudo que você precisa.<br>Em um só app.</span>
+    <span class="lang-en">Everything you need.<br>In one app.</span>
+  </h2>
+  <p class="section-sub">
+    <span class="lang-pt">Chega de alternar entre 4 aplicativos diferentes. O Supera reúne o que sempre faltou no mercado brasileiro.</span>
+    <span class="lang-en">Stop switching between 4 different apps. Supera brings together what was always missing in the market.</span>
+  </p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+      </div>
+      <h3><span class="lang-pt">Modo Treino</span><span class="lang-en">Workout Mode</span></h3>
+      <p><span class="lang-pt">Cronômetro de descanso, séries, reps e carga. Tudo organizado para você focar no que importa: treinar.</span><span class="lang-en">Rest timer, sets, reps and load. All organized so you can focus on what matters: training.</span></p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3><span class="lang-pt">Competições</span><span class="lang-en">Competitions</span></h3>
+      <p><span class="lang-pt">Crie desafios, convide amigos com um código e dispute rankings por período. A motivação que faltava.</span><span class="lang-en">Create challenges, invite friends with a code and compete in period rankings. The motivation you needed.</span></p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      </div>
+      <h3><span class="lang-pt">Composição Corporal</span><span class="lang-en">Body Composition</span></h3>
+      <p><span class="lang-pt">Importe PDFs de bioimpedância e acompanhe a evolução de gordura, músculo, água e muito mais ao longo do tempo.</span><span class="lang-en">Import bioimpedance PDFs and track the evolution of fat, muscle, water and much more over time.</span></p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h3><span class="lang-pt">Metas Inteligentes</span><span class="lang-en">Smart Goals</span></h3>
+      <p><span class="lang-pt">Defina metas semanais por modalidade — academia, corrida, tênis, ciclismo — e acompanhe o progresso visualmente.</span><span class="lang-en">Set weekly goals by sport — gym, running, tennis, cycling — and track progress visually.</span></p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3><span class="lang-pt">Histórico Visual</span><span class="lang-en">Visual History</span></h3>
+      <p><span class="lang-pt">Calendário mensal de atividades para você visualizar sua consistência e sequência de treinos de um relance.</span><span class="lang-en">Monthly activity calendar so you can see your consistency and workout streak at a glance.</span></p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <h3><span class="lang-pt">Multi-esporte</span><span class="lang-en">Multi-sport</span></h3>
+      <p><span class="lang-pt">Academia, corrida, natação, futebol, tênis, ciclismo. Registre qualquer atividade e tenha tudo centralizado.</span><span class="lang-en">Gym, running, swimming, football, tennis, cycling. Log any activity and have everything centralized.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="max-width: 760px;">
+  <div class="section-tag">
+    <span class="lang-pt">Dúvidas frequentes</span>
+    <span class="lang-en">FAQ</span>
+  </div>
+  <h2>
+    <span class="lang-pt">Perguntas frequentes.</span>
+    <span class="lang-en">Frequently asked questions.</span>
+  </h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="lang-pt">O Supera é gratuito?</span>
+        <span class="lang-en">Is Supera free?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <span class="lang-pt">Sim! O plano gratuito inclui registro ilimitado de atividades, modo treino com cronômetro e competições com até 5 amigos. O plano Premium desbloqueia histórico completo de composição corporal, gráficos avançados e competições ilimitadas.</span>
+        <span class="lang-en">Yes! The free plan includes unlimited activity logging, workout mode with timer, and competitions with up to 5 friends. Premium unlocks full body composition history, advanced charts, and unlimited competitions.</span>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="lang-pt">Meus dados ficam salvos na nuvem?</span>
+        <span class="lang-en">Is my data saved in the cloud?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <span class="lang-pt">Sim. Todos os seus treinos, metas e dados de composição corporal ficam sincronizados na nuvem, acessíveis de qualquer dispositivo com sua conta.</span>
+        <span class="lang-en">Yes. All your workouts, goals, and body composition data are synced to the cloud, accessible from any device with your account.</span>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="lang-pt">Funciona para qualquer modalidade esportiva?</span>
+        <span class="lang-en">Does it work for any sport?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <span class="lang-pt">Sim. Você pode registrar academia, corrida, natação, ciclismo, futebol, tênis, luta, yoga e muito mais. O modo treino com cronômetro é especialmente otimizado para musculação.</span>
+        <span class="lang-en">Yes. You can log gym, running, swimming, cycling, football, tennis, martial arts, yoga and more. The workout mode with timer is especially optimized for weightlifting.</span>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="lang-pt">Como funcionam as competições?</span>
+        <span class="lang-en">How do competitions work?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <span class="lang-pt">Você cria um desafio, define a métrica (número de treinos, calorias, distância) e o período. Depois é só compartilhar o código de 8 caracteres ou o link direto com seus amigos. O ranking atualiza em tempo real.</span>
+        <span class="lang-en">You create a challenge, set the metric (number of workouts, calories, distance) and the period. Then just share the 8-character code or direct link with your friends. Rankings update in real time.</span>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="lang-pt">Posso cancelar o Premium quando quiser?</span>
+        <span class="lang-en">Can I cancel Premium anytime?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <span class="lang-pt">Sim, sem fidelidade. Você pode cancelar a qualquer momento e continuar usando o plano gratuito com todos os seus dados preservados.</span>
+        <span class="lang-en">Yes, no lock-in. You can cancel at any time and keep using the free plan with all your data preserved.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<div class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="section-tag">
+      <span class="lang-pt">Planos</span>
+      <span class="lang-en">Pricing</span>
+    </div>
+    <h2>
+      <span class="lang-pt">Simples e transparente.</span>
+      <span class="lang-en">Simple and transparent.</span>
+    </h2>
+    <p class="section-sub" style="margin: 0 auto;">
+      <span class="lang-pt">Comece grátis. Faça upgrade quando quiser evoluir de verdade.</span>
+      <span class="lang-en">Start free. Upgrade when you're ready to truly evolve.</span>
+    </p>
+
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <div class="plan-name"><span class="lang-pt">Grátis</span><span class="lang-en">Free</span></div>
+        <div class="plan-price">R$ 0</div>
+        <div class="plan-period"><span class="lang-pt">para sempre</span><span class="lang-en">forever</span></div>
+        <ul class="plan-features">
+          <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="lang-pt">Registro de atividades ilimitado</span><span class="lang-en">Unlimited activity logging</span></li>
+          <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="lang-pt">Modo treino com cronômetro</span><span class="lang-en">Workout mode with timer</span></li>
+          <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="lang-pt">Competições (até 5 amigos)</span><span class="lang-en">Competitions (up to 5 friends)</span></li>
+          <li><div class="dash"></div><span class="lang-pt">Histórico ilimitado de composição</span><span class="lang-en">Unlimited body composition history</span></li>
+          <li><div class="dash"></div><span class="lang-pt">Gráficos avançados de evolução</span><span class="lang-en">Advanced progress charts</span></li>
+          <li><div class="dash"></div><span class="lang-pt">Competições ilimitadas</span><span class="lang-en">Unlimited competitions</span></li>
+        </ul>
+        <a href="https://move-track-inspire.lovable.app" class="plan-cta outline" target="_blank">
+          <span class="lang-pt">Criar conta grátis</span>
+          <span class="lang-en">Create free account</span>
+        </a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="featured-badge"><span class="lang-pt">⚡ Mais popular</span><span class="lang-en">⚡ Most popular</span></div>
+        <div class="plan-name" style="color: var(--teal);">Premium</div>
+        <div class="plan-price">R$ 24<span>,90/mês</span></div>
+        <div class="plan-period"><span class="lang-pt">ou R$ 199/ano — economize 33%</span><span class="lang-en">or R$ 199/year — save 33%</span></div>
+        <ul class="plan-features">
+          <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="lang-pt">Tudo do plano grátis</span><span class="lang-en">Everything in free plan</span></li>
+          <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="lang-pt">Histórico ilimitado de composição corporal</span><span class="lang-en">Unlimited body composition history</span></li>
+          <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="lang-pt">Gráficos avançados de evolução</span><span class="lang-en">Advanced progress charts</span></li>
+          <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="lang-pt">Competições ilimitadas</span><span class="lang-en">Unlimited competitions</span></li>
+          <li><div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="lang-pt">Suporte prioritário</span><span class="lang-en">Priority support</span></li>
+        </ul>
+        <a href="https://move-track-inspire.lovable.app" class="plan-cta solid" target="_blank">
+          <span class="lang-pt">Começar Premium</span>
+          <span class="lang-en">Start Premium</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a class="logo" href="#">Supera</a>
+  </div>
+  <div>
+    <span class="lang-pt">© 2026 Supera. Feito com 💚 no Brasil.</span>
+    <span class="lang-en">© 2026 Supera. Made with 💚 in Brazil.</span>
+  </div>
+  <div style="display:flex;gap:20px;align-items:center;">
+    <a href="/privacidade" style="font-size:13px;color:var(--ink3);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--ink3)'">
+      <span class="lang-pt">Política de Privacidade</span>
+      <span class="lang-en">Privacy Policy</span>
+    </a>
+  </div>
+</footer>
+
+<!-- Google Analytics — substitua G-XXXXXXXXXX pelo seu ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<script>
+function toggleLang() {
+  document.body.classList.toggle('en');
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
